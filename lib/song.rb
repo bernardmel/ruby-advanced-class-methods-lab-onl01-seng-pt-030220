@@ -33,6 +33,15 @@ class Song
     song
   end
 
+  def self.find_or_create_by_name(title)
+    song = self.find_by_name(title)
+    if song
+      song
+    else
+      self.create_by_name(title)
+    end
+  end
+
 
 
 
